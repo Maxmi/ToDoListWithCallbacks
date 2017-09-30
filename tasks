@@ -1,0 +1,37 @@
+#!/usr/bin/env node
+const fs = require('fs');
+const addTask = require('./commands/add.js');
+const deleteTask = require('./commands/delete.js');
+const { list } = require('./commands/list.js');
+const completeTask = require('./commands/complete.js');
+const helpers = require('./commands/helpers.js');
+
+const command = process.argv[2];
+const taskName = process.argv[3];
+const id = process.argv[3];
+
+const runTaskFunction = helpers.runTaskFunction;
+
+
+let result;
+
+switch (command) {
+  case 'add':
+    runTaskFunction(addTask, taskName);
+    break;
+  case 'list':
+    runTaskFunction(list);
+    break;
+  case 'complete':
+    runTaskFunction(completeTask, id);
+    break;
+  case 'delete':
+    runTaskFunction(deleteTask, id);
+    break;
+  default:
+    result = 'Command not recognized';
+}
+
+// helpers.getAll(commandFunc);
+
+// console.log(result);
