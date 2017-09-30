@@ -1,5 +1,5 @@
-var expect = require('chai').expect;
-var {readFileCallback} = require('../commands/helpers');
+const expect = require('chai').expect;
+const { readFileCallback } = require('../commands/helpers');
 
 describe('readFileCallback', function() {
   const callback = () => {};

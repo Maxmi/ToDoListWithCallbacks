@@ -1,6 +1,5 @@
 const fs = require('fs');
 
-
 const readFileCallback = (callback, taskName) => {
   return (err, content) => {
     if(err) throw new Error(err);

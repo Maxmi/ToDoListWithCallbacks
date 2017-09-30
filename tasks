@@ -13,8 +13,6 @@ const id = process.argv[3];
 const runTaskFunction = helpers.runTaskFunction;
 
 
-let result;
-
 switch (command) {
   case 'add':
     runTaskFunction(addTask, taskName);
@@ -29,9 +27,5 @@ switch (command) {
     runTaskFunction(deleteTask, id);
     break;
   default:
-    result = 'Command not recognized';
+    console.log('Command not recognized');
 }
-
-// helpers.getAll(commandFunc);
-
-// console.log(result);
